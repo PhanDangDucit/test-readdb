@@ -1,6 +1,6 @@
 'use client'
-import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
+// import { usePathname, useSearchParams } from "next/navigation";
+// import { useRouter } from "next/router";
 
 export default function Pagination(
     {
@@ -13,14 +13,14 @@ export default function Pagination(
 ) {
     const prevPage = (currentPage > 1) ? (currentPage- 1) : 1;
     const nextPage = (currentPage < totalPages) ? (currentPage + 1) : totalPages;
-    const handleChangePage = () => {
-        const searchParams = useSearchParams();
-        const pathName = usePathname();
-        const { replace } = useRouter();
-        const params = new URLSearchParams(searchParams);
-        params.set('page', String(currentPage));
-        replace(`${pathName}?${params.toString()}`);
-    }
+    // const handleChangePage = () => {
+    //     const searchParams = useSearchParams();
+    //     const pathName = usePathname();
+    //     const { replace } = useRouter();
+    //     const params = new URLSearchParams(searchParams);
+    //     params.set('page', String(currentPage));
+    //     replace(`${pathName}?${params.toString()}`);
+    // }
     return (
         <div>
             <nav>

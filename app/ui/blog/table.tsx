@@ -2,7 +2,6 @@ import { fetchPhotos } from "@/app/lib/data"
 import { PhotosType } from "@/app/lib/definitions";
 import Link from "next/link";
 
-
 export default async function TableBlog({currentPage}: {currentPage: number}) {
   const photos: PhotosType[] = await fetchPhotos(currentPage);
   
