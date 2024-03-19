@@ -5,8 +5,6 @@ import Banner3 from "@/public/banner/yeuthuongtiepnoi.png";
 
 export default function Carousel() {
     return (
-        
-
         <div id="indicators-carousel" className="relative w-full" data-carousel="slide">
         {/* Carousel wrapper */}
         <div className="relative h-56 overflow-hidden rounded-lg md:h-96">

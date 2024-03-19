@@ -3,8 +3,8 @@ import { PhotosType } from "@/app/lib/definitions";
 import Link from "next/link";
 
 
-export default async function TableBlog() {
-  const photos: PhotosType[] = await fetchPhotos();
+export default async function TableBlog({currentPage}: {currentPage: number}) {
+  const photos: PhotosType[] = await fetchPhotos(currentPage);
   
   return (
     <div className="relative overflow-x-auto shadow-md bg-white my-6 border-1 border-black">
@@ -107,6 +107,9 @@ export default async function TableBlog() {
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 {photo.thumbnailUrl}
                 </th>
+                <td className="px-6 py-4">
+                  <Link href={`post/${photo.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</Link>
+                </td>
                 <td className="px-6 py-4">
                   <Link href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                 </td>
